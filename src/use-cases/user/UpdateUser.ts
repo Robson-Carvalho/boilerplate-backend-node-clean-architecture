@@ -1,0 +1,10 @@
+import { User } from "../../domain/entities/User";
+import { IUserRepository } from "../../domain/interfaces/UserRepository";
+
+export class UpdateUser {
+  constructor(private userRepository: IUserRepository) {}
+
+  async execute(user: User) {
+    return await this.userRepository.update(user);
+  }
+}
